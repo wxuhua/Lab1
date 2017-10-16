@@ -1,5 +1,6 @@
 package lab1;
-
+/*111111
+22222222*/
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

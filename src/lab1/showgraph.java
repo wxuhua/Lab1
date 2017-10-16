@@ -1,7 +1,8 @@
 package lab1;
 import java.io.*;
 import java.util.*;
-
+//////*11111
+2222222222*/
 
 public class showgraph {
 	
