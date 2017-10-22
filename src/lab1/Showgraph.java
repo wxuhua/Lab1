@@ -2,9 +2,9 @@ package lab1;
 import java.io.*;
 import java.util.*;
 //////*11111
-2222222222*/
 
-public class showgraph {
+
+public class Showgraph {
 	
 	class MatrixDG {
 
@@ -26,10 +26,10 @@ public class showgraph {
 	}				
 	public static void main(String[] args) {
 		String filename="e:/temp/words.txt";
-		showgraph ws = new showgraph();
-		MatrixDG Graph = ws.createDirectedGraph(filename);
+		Showgraph ws = new Showgraph();
+		MatrixDG graph = ws.createDirectedGraph(filename);
 		
-		ws.testfunction(Graph);
+		ws.testfunction(graph);
 		
 	}
 	public void testfunction(MatrixDG graph)
@@ -80,19 +80,19 @@ public class showgraph {
 		
 			
 	}
-	public void savegraph(MatrixDG G)
+	public void savegraph(MatrixDG g)
 	{
 		GraphViz gViz=new GraphViz("C:\\Users\\Xuwang","E:\\Java\\graphviz\\bin\\dot.exe");//目标目录（存图片），dot目录
-		gViz.start_graph();
-		for(int i=0;i<G.vlen;i++) {			
-			for(int j=0;j<G.vlen;j++) {
-				if(G.mMatrix[i][j]>0&&G.mMatrix[i][j]!=999)
+		gViz.startgraph();
+		for(int i=0;i<g.vlen;i++) {			
+			for(int j=0;j<g.vlen;j++) {
+				if(g.mMatrix[i][j]>0&&g.mMatrix[i][j]!=999)
 				{
-					gViz.addln(G.mVexs[i]+"->"+G.mVexs[j]+";");				
+					gViz.addln(g.mVexs[i]+"->"+g.mVexs[j]+";");				
 				}
 			}
 		}		
-        gViz.end_graph();
+        gViz.endgraph();
         try {
             gViz.run();
         } catch (Exception e) {
@@ -229,7 +229,7 @@ public class showgraph {
 		
 		
 		for (i=0;i<20;i++){
-			if (words[i]!="")
+			if (!(words[i]).equals(""))
 				{
 					System.out.print(words[i]+"\n");
 				}
@@ -239,7 +239,7 @@ public class showgraph {
 		int cw=0,cw2=0;  //cw is the number of differentwords	;	cw2 is number of all words
 		for (int t=0;t<words.length;t++)
 		{
-			if (words[t]!="")
+			if (!(words[t]).equals(""))
 			{
 				cw++;
 			}
@@ -248,7 +248,7 @@ public class showgraph {
 		}
 		for (int t=0;t<words.length;t++)
 		{
-			if (words1[t]!="")
+			if (!(words1[t]).equals(""))
 			{
 				cw2++;
 			}
@@ -287,7 +287,7 @@ public class showgraph {
             p1=getposition(words1[i],words);
             p2=getposition(words1[i+1],words);
            // System.out.print(p1+"  "+p2+"\n");
-            if (words1[i]!="" && words1[i+1]!="")
+            if (!(words1[i]).equals("") && !(words1[i+1]).equals(""))
             {
             		aMATRIX.mMatrix[p1][p2]++;
             }
@@ -305,20 +305,20 @@ public class showgraph {
         return aMATRIX;
 	}
 
-	public void showDirectedGraph(MatrixDG G)//输出图邻接表
+	public void showDirectedGraph(MatrixDG g)//输出图邻接表
 	{
 		//System.out.println("\n"+"2.output adjlist"+"\n");
-		MatrixDG localG=new MatrixDG(G.vlen);
-		localG = G;
+		MatrixDG localG=new MatrixDG(g.vlen);
+		localG = g;
 
 		for(int i=0;i<localG.vlen;i++)
 		{
-			System.out.print(G.mVexs[i]+"->");
+			System.out.print(g.mVexs[i]+"->");
 			for(int j=0;j<localG.vlen;j++)
 			{
 				if(localG.mMatrix[i][j]>0 && localG.mMatrix[i][j]!=999)
 				{
-					System.out.print(G.mVexs[j]+"->");
+					System.out.print(g.mVexs[j]+"->");
 					//localG.mMatrix[i][j]--;
 				}
 				
@@ -619,7 +619,7 @@ public class showgraph {
 		g.mVexs[w1]=g.mVexs[w1]+" *";
 		for (int j=99;j>=0;j--)
 		{
-			if (path[j]!="" && j!=0)
+			if (!(path[j]).equals("") && j!=0)
 			{
 				s=s+path[j]+" -> ";
 				//System.out.print(path[j]+" -> ");
@@ -629,8 +629,7 @@ public class showgraph {
 				s=s+path[j];
 				//System.out.print(path[j]);
 			}
-		}
-		
+		}		
 		return s;
 	}
 
