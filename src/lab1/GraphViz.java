@@ -1,6 +1,4 @@
 package lab1;
-/*111111
-22222222*/
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -69,11 +67,11 @@ public class GraphViz {
         graph.append('\n');
     }
 
-    public void start_graph() {
+    public void startgraph() {
         graph.append("digraph G {\n") ;
     }
 
-    public void end_graph() {
+    public void endgraph() {
         graph.append("}") ;
     }   
 } 
