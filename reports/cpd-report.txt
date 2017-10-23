@@ -1,0 +1,17 @@
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 478 of E:\java-neon\test\Lab4\src\lab1\showgraph.java
+Starting at line 552 of E:\java-neon\test\Lab4\src\lab1\showgraph.java
+
+		int f[]=new int[g.vlen];
+		
+		for (int i=0;i<g.vlen;i++)
+		{
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 45 of E:\java-neon\test\Lab4\graphviz-java-api-master\src\main\java\com\github\jabbalaci\graphviz\Proba.java
+Starting at line 81 of E:\java-neon\test\Lab4\graphviz-java-api-master\src\main\java\com\github\jabbalaci\graphviz\Proba.java
+
+		File out = new File("/tmp/simple." + type);   // Linux
+		//	   File out = new File("c:/eclipse.ws/graphviz-java-api/tmp/simple." + type);   // Windows
+		gv.writeGraphToFile( gv.getGraph(gv.getDotSource(), type, repesentationType), out );
+	}
